@@ -1,0 +1,79 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="p-5">
+    <div class="container">
+        <div class="row text-center text-dark">
+            <div class="col-md-12 col-xl-7">
+                <h1 class="pb-3">Formularz kontaktowy</h1>
+                <p>Masz jakieś pytania? Skontaktuj sie z nami, a chętnie odpowiemy!</p>
+                    <form class="ps-5 pe-5 needs-validation" method="POST" action="{% url 'kontakt' %}" novalidate>
+                        {% csrf_token %}
+                  <!-- Name input -->
+                  <div class="form-outline box mb-4">
+                    {{ contact.imie }}
+                    <label class="form-label">{{ contact.imie.label }}</label>
+                      <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                  </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    {{ contact.email }}
+                    <label class="form-label">{{ contact.email.label }}</label>
+                      <div class="invalid-feedback">Musisz podać swój e-mail!</div>
+                  </div>
+
+                  <!-- Message input -->
+                  <div class="form-outline mb-4">
+                      {{ contact.tresc }}
+                    <label class="form-label">{{ contact.tresc.label }}</label>
+                      <div class="form-helper"></div>
+                      <div class="invalid-feedback">Nie możesz wysłać wiadomości bez treści!</div>
+                  </div>
+
+                  <!-- Checkbox -->
+                  <div class="form-check d-flex justify-content-center mb-4">
+                    {{ contact.dla_mnie }}
+                    <label class="form-check-label">
+                      {{ contact.dla_mnie.label }}
+                    </label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <button type="submit" class="btn mb-4" style="background-color: orange;">Wyślij</button>
+                </form>
+
+            </div>
+
+            <div class="col-md-12 col-xl-5">
+                <h1 class="pb-4">Dane firmy</h1>
+                <div class="d-flex justify-content-center align-items-center">
+                    <ul style="font-size: 21px; text-align: left;" class="list-group-flush">
+                        <li class="list-group-item fas fa-user col-12 list-us"> <span class="text-dark">Zobin-IT Damian Pielka</span></li>
+                        <li class="list-group-item fas fa-home col-12 list-us"> <span class="text-dark">ul. Stawowa 5,46-060 Ligota Prószkowska</span></li>
+                        <li class="list-group-item fas fa-phone col-12 list-us"> <span class="text-dark"> +48 790 443 396</span></li>
+                        <li class="list-group-item fas fa-info col-12 list-us"> <span class="text-dark"> NIP: 991-054-22-05</span></li>
+                        <li class="list-group-item fas fa-info col-12 list-us"> <span class="text-dark"> REGON: 520402368</span></li>
+                        <li class="list-group-item fas fa-clock col-12 list-us"> <span class="text-dark"> Godz. otwarcia </br><span class="mt-2 d-block">Poniedziałek - Piątek: 7:00 - 20:00</span></span></li>
+                        <li class="list-group-item fas fa-check col-12" style="display: none"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="container bg-image  d-flex justify-content-center align-items-center" style="height: 200px;  background-image: url('{% static 'assets/img/lucas-benjamin-GAM-7l4QzmI-unsplash.jpg' %}'); border-radius:100px; box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.8);">
+        <div class="row text-center">
+            <div class="d-flex justify-content-center align-items-center col-xl-8 col-md-12">
+                <h1 class="text-white" style="font-weight: bold;">Kliknij w przycisk obok i wypełnij formularz, a otrzymasz darmową wycenę!</h1>
+            </div>
+            <div class="d-flex justify-content-center align-items-center col-xl-4 col-md-12">
+                <a class="btn btn-outline-light btn-lg btn-header" href="{% url 'wycena' %}" role="button" style="background-color: white; color: orange; font-weight: bold;">Wycena</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

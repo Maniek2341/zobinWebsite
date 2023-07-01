@@ -1,0 +1,92 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="p-5" style="min-height: 300px; background-color: #c4c4c4">
+        <div class="container text-dark">
+            <div class="row text-center">
+                <h1 class="pt-3">Dlaczego <span style="color: orange;">MY?</span></h1>
+                <p class="pt-3 pb-2 text-lg-start" style="font-size: 21px;">Jesteśmy specjalistami w swojej dziedzinie IT, nie ustannie podnosimy swoje kwalifikacje zawodowe, dzięki czemu możemy zaoferowac naszym Klientom wykonanie usługi na najwyższym poziomie.</p>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-sm-12">
+                    <ul style="font-size: 21px; text-align: left;" class="list-group-flush">
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Gwarancja wykonania</span></li>
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Atrakcyjne ceny</span></li>
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Indywidualne podejście</span></li>
+                        <li class="list-group-item fas fa-check col-12" style="display: none"></li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-sm-12">
+                    <ul style="font-size: 21px; text-align: left; border-radius: 20px;" class="list-group-flush">
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Najnowsze technologie</span></li>
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Sprawdzone rozwiązania</span></li>
+                        <li class="list-group-item fas fa-check col-12 list-us"> <span class="text-dark">Pomoc 24/7</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-image d-flex align-items-center" style="height: 200px;  background-image: url('{% static 'assets/img/lucas-benjamin-GAM-7l4QzmI-unsplash.jpg' %}')">
+        <div class="container">
+            <div class="row text-center">
+                <div class="d-flex justify-content-center align-items-center col-xl-6 col-md-12">
+                    <h1 class="text-white" style="font-weight: bold;">Chcesz otrzymać darmową wycenę? Skontaktuj się z nami!</h1>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-xl-6 col-md-12">
+                    <a class="btn btn-outline-light btn-lg btn-header" id="contact" href="{% url 'wycena' %}" role="button" style="background-color: white; color: orange; font-weight: bold;">Wycena</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-5" style="min-height: 500px; background-color: #c4c4c4">
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="pt-4" style="color:#7800ff; font-weight: bold">Nasze technologie!</h1>
+                <p class="text-white">Strony internetowe wykonujemy naszym zdaniem za pomocą najlepszych technologi.</p>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/640px-HTML5_logo_and_wordmark.svg.png' %}" class=" p-4" height="350"  alt="HTML logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/CSS3_logo_and_wordmark.svg.png' %}" class=" p-4" height="350" alt="CSS logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/js-logo.png' %}" class=" p-4" height="350" alt="JS logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/800px-Python-logo-notext.svg.png' %}" class=" p-4" height="350" alt="Python logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/django-logo-4C5ECF7036-seeklogo.com.png' %}" class="p-4" height="350" alt="Django logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center col-md-6 col-xl-4 mb-4">
+                    <div class="col-12 tech">
+                        <img src="{% static 'assets/img/WordPress_blue_logo.svg.png' %}" class=" p-4" height="350" alt="Wordpress logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-image d-flex align-items-center" style="height: 150px;  background-image: url('{% static 'assets/img/lucas-benjamin-GAM-7l4QzmI-unsplash.jpg' %}')">
+        <div class="container">
+            <div class="row text-center">
+                <div class="d-flex justify-content-center">
+                    <h1 class="text-white" style="font-weight: bold;">Strony internetowe juz od 700zl!!</h1>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

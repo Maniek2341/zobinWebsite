@@ -1,0 +1,102 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    background-color: white;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#banner-h1, #banner-h4, #contact, .tech{
+    animation-duration: 4s;
+    animation-name: fade-in;
+}
+
+.tech {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.4);
+}
+
+.nav-item .active {
+    color: orange !important;
+}
+
+.nav-item .active:hover {
+    color: darkorange !important;
+}
+
+.polityka:hover {
+    color: darkorange !important;
+}
+
+.btn-header {
+    border-color: orange;
+    border-radius: 50px;
+}
+
+.btn-header:hover {
+    border-color: darkorange;
+}
+
+.list-us {
+    background-color: transparent;
+    color: orange;
+}
+
+
+.preload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: #10131a;
+    transition: opacity 400ms ease-in-out, visibility 0s 400ms;
+}
+
+.show-preloader {
+    visibility: visible;
+    opacity: 1;
+}
+
+.circle {
+    background-color: orange;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce-circles 0.7s infinite ease-in-out;
+}
+
+.preload .circle:nth-child(1) {
+     animation-delay: -1s;
+}
+
+.preload .circle:nth-child(2) {
+     animation-delay: -0.9s;
+}
+
+.preload .circle:nth-child(3) {
+     animation-delay: -0.8s;
+}
+
+.preload .circle:nth-child(4) {
+    animation-delay: -0.7s;
+}
+
+@keyframes bounce-circles {
+    0%, 40%, 100% {
+        transform: translateY(-10px);
+    } 20% {
+        transform: translateY(-20px);
+    }
+}

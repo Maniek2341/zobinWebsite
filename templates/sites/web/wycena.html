@@ -1,0 +1,431 @@
+{% extends 'sites/base/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="p-5 ">
+    <div class="container ">
+        <div class="row text-center text-dark d-flex align-items-center justify-content-center">
+            <h1 class="pb-3">Wycena strony internetowej</h1>
+                <p>Dziękujemy za zainteresowanie naszą ofertą.</p>
+                <p>Abyśmy mogli dokonać wstępnej wyceny projektu prosimy o wypełnienie poniższego dokumentu. Zawiera on wszystkie niezbędne informacje, które są kluczowe do wstępnego oszacowania kosztów i możliwego terminu realizacji.</p>
+                <p>Wszystkie informacje przesłane w niniejszym dokumencie traktujemy jako poufne, które będą wykorzystane tylko i wyłącznie do wyceny projektu.</p>
+            <div class="col-md-12 col-xl-9 " style="text-align: left;">
+                <form class="needs-validation" novalidate>
+                <h1>1. Informacje odnośnie firmy</h1>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Nazwa firmy</h5>
+                                <p>Podaj nazwę firmy</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.nazwa_firmy }}
+                                    <label class="form-label" for="id_nazwa_firmy">{{ wycena.nazwa_firmy.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać nazwe firmy!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Osoba kontaktowa</h5>
+                                <p>Podaj adres e-mail i telefon do osoby kontaktowej w sprawie projektu strony internetowej</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-2">
+                                    {{ wycena.email }}
+                                    <label class="form-label" for="id_email">{{ wycena.email.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać e-mail!</div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    {{ wycena.phone }}
+                                    <label class="form-label" for="id_phone">{{ wycena.phone.label }}</label>
+                                    <div class="invalid-feedback">Musisz podać numer telefonu!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Opis branży</h5>
+                                <p>Powiedz nam w jakiej branży działa twoja firma np. producent odzieży, masaże, mechanika samochodowa itp.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                    {{ wycena.branza }}
+                                    <label class="form-label" for="id_branza">{{ wycena.branza.label }}</label>
+                                    <div class="invalid-feedback">Musisz podać w jakiej branży dziala firma!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Aktualna strona WWW</h5>
+                                <p>Jeżeli posiadasz obecnie stronę internetową, podaj nam adres WWW. Pozwoli nam to lepiej zapoznać się z Twoją firmą</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                    {{ wycena.web_page }}
+                                    <label class="form-label" for="id_web_page">{{ wycena.web_page.label }}</label>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Co jest głównym powodem zmiany obecnej strony internetowej?</h5>
+                                <p>Jeżeli posiadasz obecnie stronę internetową
+i przedmiotem zlecenia jest jej zmiana, to powiedz nam jakie są główne powody tej zmiany np. odświeżenie grafiki, brak responsywności, chęć innego sposobu prezentacji usług itp.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                    {{ wycena.powod_zmiany }}
+                                    <label class="form-label" for="id_powod_zmiany">{{ wycena.powod_zmiany.label }}</label>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Oferowane produkty / usługi</h5>
+                                <p>Powiedz nam jakie produkty / usługi chcesz oferować swoim klientom.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                    {{ wycena.prod_usl }}
+                                    <label class="form-label" for="id_prod_usl">{{ wycena.prod_usl.label }}</label>
+                                    <div class="invalid-feedback">Musisz podać jakie produkty/uslugi oferuje firma!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Bezpośrednia konkurencja</h5>
+                                <p>Prosimy o podanie nam adresów stron internetowych do bezpośredniej konkurencji. Pozwoli nam to lepiej poznać branżę.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                    {{ wycena.konkurencja }}
+                                    <label class="form-label" for="id_konkurencja">{{ wycena.konkurencja.label }}</label>
+                                    <div class="invalid-feedback">Musisz podać adresy do konkurencyjnych firm!</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <h1>2. Przedmiot zlecenia</h1>
+
+                        <p>Powiedz nam która z poniższych opcji Cię interesuje. </p>
+                        <p style="font-weight: bold;">Postaw X przy wybranej opcji / opcjach </p>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Kompletna strona internetowa</h5>
+                                <p>Jeżeli interesuje Cię stworzenie kompletnej strony internetowej (Grafika, Kodowanie do HTML5 + CSS3, dopasowanie do wyświetlania na urządzeniach mobilnych, uruchomienie strony na serwerze docelowym, podpięcie domeny, Google analitics, uruchomienie skrzynki pocztowej, instalacja certyfikatu SSL postaw X w kolumnie obok</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.kompletna_strona }}
+                                    <label class="form-label" for="id_kompletna_strona">{{ wycena.kompletna_strona.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Logo</h5>
+                                <p>Jeżeli nie posiadasz logo i chcesz zlecić nam jego wykonanie, postaw X w kolumnie obok. Logo jest elementem kluczowym do stworzenia strony internetowej.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.logo }}
+                                    <label class="form-label" for="id_logo">{{ wycena.logo.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Tylko projekt graficzny</h5>
+                                <p>Jeżeli chcesz zamówić u nas tylko projekt graficzny samej strony internetowej, postaw X w kolumnie obok. Projekt graficzny obejmuje wykonanie designu strony głównej i kluczowych podstron serwisu.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.proj_graf }}
+                                    <label class="form-label" for="id_proj_graf">{{ wycena.proj_graf.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Tylko Wdrożenie strony internetowej</h5>
+                                <p>Jeżeli posiadasz już przygotowane designy i interesuje cię aby stworzyć z nich funkcjonalną stronę internetową wraz z dopasowaniem do wyświetlania na urządzeniach mobilnych – postaw X w kolumnie obok</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.wdrozenie_web }}
+                                    <label class="form-label" for="id_wdrozenie_web">{{ wycena.wdrozenie_web.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Tylko Kodowanie do HTML5 + CSS3</h5>
+                                <p>Jeżeli posiadasz już przygotowane designy i interesuje cię tylko ich pocięcie i zakodowanie do HTML / CSS – postaw X w kolumnie obok</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.kodowanie_html }}
+                                    <label class="form-label" for="id_kodowanie_html">{{ wycena.kodowanie_html.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <br>
+
+                        <h1>3. Informacje dotyczące projektu strony internetowej</h1>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Makieta strony</h5>
+                                <p>Czy posiadasz makietę strony internetowej lub wiesz jak chcesz mieć rozmieszczone elementy na stronie? Jeśli tak postaw X w polu obok i prześlij ją do nas mailem.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.makieta }}
+                                    <label class="form-label" for="id_makieta">{{ wycena.makieta.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Główne elementy w menu strony oraz kluczowe funkcjonalności</h5>
+                                <p>Powiedz nam jakie pozycje w menu ma zawierać strona internetowa oraz jakiego rodzaju będzie zawartość poszczególnych pozycji. Np. Strona główna, O nas, Oferta (dzielona na dalsze pozycje), Galeria zdjęć (Kategoryzowana), Kontakt. Jeżeli chcesz aby strona posiadała zewnętrzne integracje np. z pośrednikami płatności to poinformuj nas o tym również.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.elementy }}
+                                    <label class="form-label" for="id_elementy">{{ wycena.elementy.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Animacje</h5>
+                                <p>Czy chcesz aby strona posiadała dynamiczne elementy jak pokazujące się napisy wraz ze scrollowaniem strony, slidery itp.? Jeśli tak, to napisz obok np. Deliktatne animacje lub Dużo dynamicznych animacji itp.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.animacje }}
+                                    <label class="form-label" for="id_animacje">{{ wycena.animacje.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Preferowana kolorystyka</h5>
+                                <p>Kolorystyka designu w większości wywodzi się z logo. Nie mniej jednak prosimy o określenie czy preferujesz jasne czy ciemne strony internetowe.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.kolorystyka }}
+                                    <label class="form-label" for="id_kolorystyka">{{ wycena.kolorystyka.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Materiały graficzne</h5>
+                                <p>Czy posiadasz własne zdjęcia do użytku na stronie internetowej? Jeśli nie, to określ nam preferowaną stylistykę zdjęć (np. ludzie, krajobrazy, natura, biznes, widoki miast, zdjęcia technologiczne, life style itp. )</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.mat_graficzne }}
+                                    <label class="form-label" for="id_mat_graficzne">{{ wycena.mat_graficzne.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Treści</h5>
+                                <p>Czy posiadasz już gotowe treści jakie chcesz umieścić na stronie internetowej czy są one dopiero w trakcie przygotowania?</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.tresci }}
+                                    <label class="form-label" for="id_tresci">{{ wycena.tresci.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Wersje językowe</h5>
+                                <p>W ilu wersjach językowych chcesz mieć stronę internetową.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.jezyki }}
+                                    <label class="form-label" for="id_jezyki">{{ wycena.jezyki.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <h2>Inspiracje</h2>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Podobają mi się następujące strony</h5>
+                                <p>Podaj linki do stron WWW, które ci się podobają. Możesz nam również wskazać elementy, jakie chcesz mieć na swojej stronie (w podobnej formie)</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.inspiracje }}
+                                    <label class="form-label" for="id_inspiracje">{{ wycena.inspiracje.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <h1>4. Informacje końcowe</h1>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Oczekiwany termin realizacji</h5>
+                                <p>Powiedz nam na kiedy chcesz aby strona była gotowa.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.termin }}
+                                    <label class="form-label" for="id_termin">{{ wycena.termin.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Budżet projektu</h5>
+                                <p>Jest to pole opcjonalne. Jednakże określenie widełek budżetu pozwoli nam na zaproponowanie / dobór rozwiązań alternatywnych w przypadku dużych rozbieżności pomiędzy oczekiwaniami a wyceną. Np. Jeżeli szacowany budżet wynosi 4000zł netto a otrzymana wycena wniesie powiedzmy 6000zł netto to będziemy mogli zaproponować rozwiązania alternatywne abyśmy mogli dojść do kompromisu.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.budzet_proj }}
+                                    <label class="form-label" for="id_budzet_proj">{{ wycena.budzet_proj.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Budżet na zdjęcia</h5>
+                                <p>Jeżeli nie posiadasz własnych zdjęć to będziemy musieli skorzystać z banków zdjęć. Ceny za zdjęcia są bardzo rozbieżne. Dlatego ważne będzie określenie tego budżetu. W przypadku średniej wielkości stron internetowych, wystarczający budżet na zdjęcia to 300zł netto.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.budzet_zdj }}
+                                    <label class="form-label" for="id_budzet_zdj">{{ wycena.budzet_zdj.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Czy posiadasz zakupioną domenę?</h5>
+                                <p>Jeśli tak podaj nam jej nazwę.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.domena }}
+                                    <label class="form-label" for="id_domena">{{ wycena.domena.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Czy posiadasz hosting?</h5>
+                                <p>Jeśli posiadasz wykupioną usługę hostingowi (serwer) podaj nam nazwę firmy w której jest ona wykupiona. Jeśli chcesz abyśmy to my zajęli się utrzymaniem Twojej strony internetowej, powiedz nam o tym. </p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.hosting }}
+                                    <label class="form-label" for="id_hosting">{{ wycena.hosting.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row d-flex align-items-center justify-content-center">
+                            <div class="col-6">
+                                <h5>Czy chcesz coś jeszcze dodać?</h5>
+                                <p>Jeśli masz jakieś pytania lub chcesz doprecyzować niektóre informacje wykorzystaj to pole.</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-outline mb-4">
+                                {{ wycena.co_jeszcze }}
+                                    <label class="form-label" for="id_co_jeszcze">{{ wycena.co_jeszcze.label }}</label>
+                                  <div class="invalid-feedback">Musisz podać swoje imię!</div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
